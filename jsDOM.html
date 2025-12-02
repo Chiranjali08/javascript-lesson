@@ -9,14 +9,20 @@
 
 <h1 id ="title">Learn JavaScript Document Model - DOM</h1>
     <p id="test">testing</p>
-    <button>Click me </button>
+    <button id="myButton" onclick="myFunction()">Click me </button>
 
 
 <script>
-    let title =document.getElementById("title");
-    console.log(title);
+    let titleElement =document.getElementById("title");
+    console.log(titleElement);
 
     titleElement.innerHTML = "JavaScript DOM Manipulation";
+    myButton.style.backgroundColor = "yellow";
+    titleElement.style.color = "blue";
+
+    function myFunction() {
+        alert("Button Clicked!");
+    }
 </script>
 </body>
 </html>
