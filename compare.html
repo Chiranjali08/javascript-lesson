@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare</title>
+    <link rel="stylesheet" href="./compare.css">
+</head>
+<body>
+<div>
+
+    <h1>Compare recent code edits</h1>
+    <div>
+        <div>
+            <label>Input Number 1</label>
+            <input type="number" id="num1">
+        </div>
+
+        <div>
+            <label>Input Number 2</label>
+            <input type="number" id="num2">
+        </div>
+
+    </div>
+
+    <div>
+        <button onclick="compareNumbers()">Compare</button>
+    </div>
+
+    <script>
+        function compareNumbers() {
+            let number1 = Number(document.getElementById("num1").value);
+            let number2 = Number(document.getElementById("num2").value);
+
+            if (number1 > number2) {
+                output = number1 + " is greater than " + number2;
+                alert(output);
+                console.log(output);
+            } else if (number1 < number2) {
+                output = number2 + " is greater than " + number1;
+                alert(output);
+                console.log(output);
+            } else {
+                output = "Both numbers are equal.";
+                alert(output);
+                console.log(output);
+            }
+        }
+    </script>
+
+</div>
+
+    
+</body>
+</html>

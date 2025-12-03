@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+    <link rel="stylesheet" href="./messageBox.css">
+</head>
+<body>
+    <div>
+        <h1>Message Box Example</h1>
+
+        <div>
+            <button onclick="showMessage()">Show Message</button>
+            <button onclick="getConfirmation()">Get Confirmation</button>
+            <button onclick="getPrompt()">Get User Input</button>
+        </div>
+
+        <div>
+            <p id="message">Message will be displayed here.</p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("This is a simple message box.");
+        }
+
+        function getConfirmation() {
+            let isOk = confirm("Do you want to proceed?");
+            if(isOk){
+                document.getElementById("message").innerHTML = "User chose OK.";
+            } else {
+                document.getElementById("message").innerHTML = "User chose Cancel.";
+            }
+            
+        }
+
+        function getPrompt() {
+            let userInput = prompt("Please enter your name:", "Guest");
+            let messageElement = document.getElementById("message");
+            if (userInput !== null && userInput !== "") {
+                messageElement.innerHTML = "Hello, " + userInput + "!";
+            } else {
+                messageElement.innerHTML = "User did not enter a name.";
+            }
+        }
+    </script>
+
+
+    
+</body>
+</html>
