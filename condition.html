@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition check</title>
+    <link rel="stylesheet" href="./condition.css">
+</head>
+<body>
+<div>
+    <h1>JavaScript Condition Check</h1>
+
+    <div>
+        <input type="text" id="ageInput" placeholder="Enter your age">
+        <button onclick="checkAge()">Check Age</button>
+    </div>
+
+    <!-- District section (hidden by default) -->
+    <div id="districtSection" style="display: none; margin-top: 20px;">
+        <select id="districtSelect">
+            <option value="">--Select a district--</option>
+            <option value="colombo">Colombo</option>
+            <option value="matara">Matara</option>
+            <option value="gampaha">Gampaha</option>
+            <option value="kandy">Kandy</option>
+        </select>
+        <button onclick="checkDistrict()">Check District</button>
+    </div>
+
+    <script>
+        function checkAge() {
+            let ageInput = document.getElementById("ageInput").value.trim();
+            let age = ageInput === "" ? 0 : Number(ageInput);
+
+            if (age >= 18) {
+                alert("You are eligible to vote.");
+                console.log("You are eligible to vote.");
+                
+                // Show district section
+                document.getElementById("districtSection").style.display = "block";
+            } else {
+                alert("You are not eligible to vote.");
+                console.log("You are not eligible to vote.");
+
+                // Hide district section
+                document.getElementById("districtSection").style.display = "none";
+            }
+        }
+
+        function checkDistrict() {
+            let district = document.getElementById("districtSelect").value;
+
+            switch (district.toLowerCase()) {
+                case "colombo":
+                    alert("You selected Colombo.");
+                    break;
+                case "matara":
+                    alert("You selected Matara.");
+                    break;
+                case "gampaha":
+                    alert("You selected Gampaha.");
+                    break;
+                case "kandy":
+                    alert("You selected Kandy.");
+                    break;
+                default:
+                    alert("Please select a district.");
+            }
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
